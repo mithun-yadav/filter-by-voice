@@ -1,0 +1,52 @@
+body{
+    background:linear-gradient(90deg,rgba(46,44,45,1)0%,rgba(66,64,67,1)100%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.btn{
+    position: relative;
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    outline: none;
+    border: 4px #090909 solid;
+    background: linear-gradient(145deg,#171717,#444245);
+    box-shadow: insert 2px 2px 0px #7d7c7e,insert -2px -2px 0px #1c1c1c;
+    color: #a6a6a6;
+}
+
+.btn span{
+    font-size: 1.9em;
+}
+
+.material-icons{
+    font-family: 'Material Icons';
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50% );
+    border-radius: inherit;
+    background: -o-linear-gradient(145deg,#262626,#606060);
+    width: 7.25em;
+    height: 7.25em;
+    z-index: -1;
+    box-shadow: 11px 11px 22px #141414,-11px -11px 22px #525252;
+}
+
+.button-clicked{
+    background: linear-gradient(-185deg,#131313,444245);
+    box-shadow: insert -2px -2px 0px #5e5e5e,insert 2px 2px 0px #1c1c1c;
+}
+
+.icon-clicked{
+    color: #fff;
+    text-shadow: 0px 0px 15px #008ECE;
+}

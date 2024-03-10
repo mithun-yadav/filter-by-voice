@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice to Text</title>
+</head>
+<body>
+    <h1>Voice to Text Converter</h1>
+    <button id="start-btn">Start Listening</button>
+    <p id="output"></p>
+
+    <script>
+        // Check if browser supports SpeechRecognition
+        if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            const output = document.getElementById('output');
+            const startBtn = document.getElementById('start-btn');
+
+            // Set some properties for recognition
+            recognition.interimResults = true; // Show interim results
+            recognition.lang = 'en-US'; // Set language
+
+            // When speech recognition returns a result
+            recognition.onresult = function(event) {
+                console.log(event.results[0]);
+                const transcript = Array.from(event.results)
+                    .map(result => result[0].transcript)
+                    .join('');
+                output.textContent = transcript;
+
+            };
+
+            // When speech recognition encounters an error
+            recognition.onerror = function(event) {
+                output.textContent = 'Error occurred in recognition: ' + event.error;
+            };
+
+            // Start the recognition when button is clicked
+            startBtn.addEventListener('click', function() {
+                recognition.start();
+                output.textContent = 'Listening...';
+            });
+
+        } else {
+            // Browser doesn't support SpeechRecognition
+            output.textContent = 'Speech recognition not supported in this browser.';
+        }
+    </script>
+</body>
+</html>

@@ -1,10 +1,12 @@
 body{
     background:linear-gradient(90deg,rgba(46,44,45,1)0%,rgba(66,64,67,1)100%);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .btn{
@@ -49,4 +51,17 @@ body{
 .icon-clicked{
     color: #fff;
     text-shadow: 0px 0px 15px #008ECE;
+}
+
+.displayName{
+    color:#fff;
+    box-shadow: 0 0 5px #fff;
+    padding: 1rem;
+}
+
+.displayName span{
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    width: 200px;
 }
